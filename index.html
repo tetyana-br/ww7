@@ -16,60 +16,62 @@
 
   <body>
     <div class="container">
-      <div class="weather">
-        <form id="search">
-          <div class="row">
-            <div class="col-9">
-              <input
-                id="city-input"
-                type="search"
-                placeholder="Type your city"
-                autofocus="on"
-                class="form-control"
-              />
+      <div class="wrapper">
+        <div class="weather">
+          <form id="search">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  id="city-input"
+                  type="search"
+                  placeholder="Type your city"
+                  autofocus="on"
+                  class="form-control"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="form-control btn btn-primary"
+                />
+              </div>
             </div>
-            <div class="col-3">
-              <input
-                type="submit"
-                value="Search"
-                class="form-control btn btn-primary"
-              />
-            </div>
-          </div>
-        </form>
+          </form>
 
-        <h1 id="city"></h1>
-        <ul>
-          <li>Last update: <span id="date">Sunday 10:00</span></li>
-          <li id="description">Partly cloudy</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <img
-              src="http://openweathermap.org/img/wn/04d@2x.png"
-              alt="overcast clouds"
-              id="icon"
-              class="float-left"
-            />
-            <span class="temp" id="temp">19</span>
-            <span class="units"
-              ><a href="#" id="celsius-link" class="active">°C</a> |
-              <a href="#" id="fahrenheit-link">°F</a></span
-            >
-          </div>
-          <div class="col-6">
-            <ul>
-              <li>Humidity: <span id="humidity"> 54 </span> %</li>
-              <li>Wind: <span id="wind"> 5</span> km/h</li>
-            </ul>
+          <h1 id="city"></h1>
+          <ul>
+            <li>Last update: <span id="date">Sunday 10:00</span></li>
+            <li id="description">Partly cloudy</li>
+          </ul>
+          <div class="row">
+            <div class="col-6">
+              <img
+                src="http://openweathermap.org/img/wn/04d@2x.png"
+                alt="overcast clouds"
+                id="icon"
+                class="float-left"
+              />
+              <span class="temp" id="temp"></span>
+              <span class="units"
+                ><a href="#" id="celsius-link" class="active">°C</a> |
+                <a href="#" id="fahrenheit-link">°F</a></span
+              >
+            </div>
+            <div class="col-6">
+              <ul>
+                <li><br />Humidity: <span id="humidity"> 54 </span> %</li>
+                <li>Wind: <span id="wind"> 5</span> km/h</li>
+              </ul>
+            </div>
           </div>
         </div>
+        <small
+          ><a href="https://github.com/tetyana-br/ww7" target="_blank"
+            >Open-source code</a
+          >, by Tetyana N.</small
+        >
       </div>
-      <small
-        ><a href="https://github.com/tetyana-br/ww7" target="_blank"
-          >Open-source code</a
-        >, by Tetyana N.</small
-      >
     </div>
 
     <script src="src/app.js"></script>
