@@ -1,7 +1,8 @@
 function formatDate() {
   return `${day}, ${date}, ${hour}:${min}`;
 }
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Sun", "Mon", "Thu"];
@@ -28,6 +29,14 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "05b9cb3aea043f334aa88ato71fb39b0";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
 function showTemperature(response) {
   console.log(response);
   let Temperature = response.data.temperature.current;
@@ -47,11 +56,14 @@ function showTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.condition.description);
   celsiusTemperature = response.data.temperature.current;
+
+  getForecast(response.data.coordinates);
 }
+
 function searchCity(city) {
   let apiKey = "05b9cb3aea043f334aa88ato71fb39b0";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  console.log(apiUrl);
+
   axios.get(apiUrl).then(showTemperature);
 }
 function handleSubmit(event) {
@@ -113,4 +125,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Brasov");
-displayForecast();
