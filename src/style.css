@@ -20,7 +20,6 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
-
   color: rgb(135, 135, 135);
   font-size: 16px;
   font-weight: 100;
@@ -67,7 +66,6 @@ li:first-letter {
   margin-bottom: 10px;
 }
 .weather-forecast {
-  text-align: center;
   margin-top: 20px;
   color: black;
 }
@@ -80,4 +78,7 @@ li:first-letter {
 }
 .weather-forecast-temperature {
   font-size: 13px;
+}
+.col-2 {
+  display: inline;
 }
