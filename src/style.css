@@ -66,3 +66,18 @@ li:first-letter {
 .row {
   margin-bottom: 10px;
 }
+.weather-forecast {
+  text-align: center;
+  margin-top: 20px;
+  color: black;
+}
+.weather-forecast.date {
+  font-size: 16;
+  opacity: 0.5;
+}
+.forecast-min {
+  opacity: 0.5;
+}
+.weather-forecast-temperature {
+  font-size: 13px;
+}
